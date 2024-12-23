@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualization</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Graph Visualization</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="file">Upload Excel File:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Generate Graph</button>
+        </form>
+
+        {% if graph_image %}
+            <h2>Generated Graph:</h2>
+            <img src="{{ graph_image }}" alt="Graph">
+        {% endif %}
+    </div>
+</body>
+</html>
